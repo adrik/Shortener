@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test!</title>
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="shortener.css" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="shortener-view.js"></script>
+    <script type="text/javascript" src="shortener-model.js"></script>
+    <script type="text/javascript" src="shortener-service.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var controller = $({});
+            var model = new ShortenerModel(controller);
+            var view = new ShortenerView(controller, $('#shortener'));
+        });
+    </script>
+</head>
+<body>
+    <form id="shortener" class="shortener">
+        <div class="input">
+            <div class="submitPanel">
+                <input type="submit" class="btn btn-primary" value="Shorten!" />
+            </div>
+            <div class="urlPanel">
+                <input id="url" type="text" placeholder="Enter url here" class="form-control input-sm" />
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="result" class="alert"></div>
+        <div class="table-responsive">
+            <table id="history" class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>URL</th>
+                        <th>RESULT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
